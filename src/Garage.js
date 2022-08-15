@@ -12,13 +12,14 @@ function Garage(props) {
                 <Car color="red" cars={props.cars} />
             </>
         )
+    } else {
+        return (
+            <>
+                <h1 id="demo">Who lives in my Garage?</h1>
+                <h3>You have no car in stock!</h3>
+            </>
+        )
     }
-
-    return (
-        <>
-            <h1 id="demo">Who lives in my Garage?</h1>
-            <h3>You have no car in stock!</h3>
-        </>)
 }
 
 export default Garage;

@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Garage from "./Garage";
 import Goal from "./Goal";
+import MyForm from "./Form";
 
 // const firstEle = <h1>Hello World!</h1>;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const sandy = ReactDOM.createRoot(document.getElementById('sandy'));
-// const fandy = ReactDOM.createRoot(document.getElementById('fandy'));
+const fandy = ReactDOM.createRoot(document.getElementById('fandy'));
 // const myList = ["Array", "Apple", "Pineapple"];
 // const lastEle = myList.map((item) => <li>{item}</li>);
 
@@ -48,4 +49,5 @@ const cars = ["Ford", "BMW", "Toyota", "Honda"]
 // root.render(para);
 root.render(<Goal isGoal={true} />)
 sandy.render(<Garage cars={cars} />);
+fandy.render(<MyForm />)
 // fandy.render(text);
