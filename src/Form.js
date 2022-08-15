@@ -36,7 +36,8 @@ function MyForm() {
                         value={inputs.username || ""}
                         onChange={handleChange}
                     />
-                </label><br />
+                </label>
+                <br />
                 <label>Enter your age:
                     <input
                         type="number"
@@ -45,15 +46,15 @@ function MyForm() {
                         onChange={handleChange}
                     />
 
-                </label ><br />
-                <textarea value={textarea} onChange={handleTextChange} /><br />
+                </label>
+                <br />
+                <textarea value={textarea} onChange={handleTextChange} />
+                <br />
                 <select value={myCar} onChange={handleSelectChange}>
                     <option value="Ford">Ford</option>
                     <option value="Volvo">Volvo</option>
                     <option value="Fiat">Fiat</option>
                 </select>
-
-
                 <input type="submit" />
             </form >
         </>

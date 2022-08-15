@@ -1,10 +1,6 @@
 import Car from "./Car";
 
 function Garage(props) {
-    //    const car = props.cars;
-    // const shoot = (a, b) => {
-    //     alert(a);
-    // }
     if (props.cars.length > 0) {
         return (
             <>
