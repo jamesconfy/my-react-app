@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Garage from "./Garage";
-import Goal from "./Goal";
-import MyForm from "./Form";
+import Garage from "./pages/Garage";
+import Goal from "./pages/Goal";
+import MyForm from "./pages/Form";
 
 // const firstEle = <h1>Hello World!</h1>;
 const root = ReactDOM.createRoot(document.getElementById('root'));
