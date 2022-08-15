@@ -2,6 +2,9 @@ import { useState } from "react";
 
 function MyForm() {
     const [inputs, setInputs] = useState("");
+    const [textarea, setTextarea] = useState(
+        "The content of a textarea goes in the value attribute"
+    );
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -9,9 +12,13 @@ function MyForm() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
+    const handleTextChange = (event) => {
+        setTextarea(event.target.value)
+    }
+
     const processSubmit = (event) => {
         event.preventDefault();
-        alert(`Your username is ${inputs.username}\nYou are ${inputs.age} years old!`)
+        alert(`Your username is ${inputs.username}\nYou are ${inputs.age} years old!\nText Area is ${textarea}`)
     }
 
     return (
@@ -33,6 +40,7 @@ function MyForm() {
                         onChange={handleChange}
                     />
                 </label>
+                <textarea value={textarea} onChange={handleTextChange} />
                 <input type="submit" />
             </form>
         </>
