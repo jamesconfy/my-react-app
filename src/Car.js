@@ -1,5 +1,15 @@
 function Car(props) {
-    return <h3 className="car">Hi, I am a {props.color} Car, with a brand of {props.brand}!</h3>;
+    const car = props.cars;
+    return (
+        <>
+            {
+                car.length > 0 &&
+                <h3>
+                    Hi, you have {car.length} Cars!
+                </h3>
+            }
+        </>
+    );
 }
 
 export default Car;
