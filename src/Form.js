@@ -5,6 +5,7 @@ function MyForm() {
     const [textarea, setTextarea] = useState(
         "The content of a textarea goes in the value attribute"
     );
+    const [myCar, setMyCar] = useState("Volvo");
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -16,9 +17,13 @@ function MyForm() {
         setTextarea(event.target.value)
     }
 
+    const handleSelectChange = (event) => {
+        setMyCar(event.target.value)
+    }
+
     const processSubmit = (event) => {
         event.preventDefault();
-        alert(`Your username is ${inputs.username}\nYou are ${inputs.age} years old!\nText Area is ${textarea}`)
+        alert(`Your username is ${inputs.username}\nYou are ${inputs.age} years old!\nText Area is ${textarea}\nSelected value is ${myCar}`)
     }
 
     return (
@@ -31,7 +36,7 @@ function MyForm() {
                         value={inputs.username || ""}
                         onChange={handleChange}
                     />
-                </label>
+                </label><br />
                 <label>Enter your age:
                     <input
                         type="number"
@@ -39,8 +44,13 @@ function MyForm() {
                         value={inputs.age || ""}
                         onChange={handleChange}
                     />
-                </label>
-                <textarea value={textarea} onChange={handleTextChange} />
+                </label><br />
+                <textarea value={textarea} onChange={handleTextChange} /><br />
+                <select value={myCar} onChange={handleSelectChange}>
+                    <option value="Ford">Ford</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Fiat">Fiat</option>
+                </select>
                 <input type="submit" />
             </form>
         </>
