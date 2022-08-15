@@ -44,7 +44,7 @@ const sandy = ReactDOM.createRoot(document.getElementById('sandy'));
 // const sandy2 = <p>Hello</p>;
 // const fandy2 = (<option>Wah!</option>)
 
-const cars = [];
+const cars = ["Ford", "BMW", "Toyota", "Honda"]
 // root.render(para);
 root.render(<Goal isGoal={true} />)
 sandy.render(<Garage cars={cars} />);
