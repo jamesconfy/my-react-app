@@ -5,13 +5,20 @@ function Garage(props) {
     // const shoot = (a, b) => {
     //     alert(a);
     // }
+    if (props.cars.length > 0) {
+        return (
+            <>
+                <h1 id="demo">Who lives in my Garage?</h1>
+                <Car color="red" cars={props.cars} />
+            </>
+        )
+    }
+
     return (
         <>
             <h1 id="demo">Who lives in my Garage?</h1>
-            <Car color="red" cars={props.cars} />
-            {/* <button onClick={(event) => shoot("Shoot your shot, you are going to score.\nGOALLLLLL!!!!")}>Click to Shoot!</button> */}
-        </>
-    );
+            <h3>You have no car in stock!</h3>
+        </>)
 }
 
 export default Garage;
