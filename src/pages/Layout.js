@@ -4,15 +4,15 @@ const Layout = () => {
     return (
         <>
             <nav>
-                <ul style={{ display: "flex" }}>
-                    <li style={{ paddingLeft: "10px", listStyle: "none" }}>
-                        <Link to="/">Home</Link>
+                <ul>
+                    <li>
+                        <Link to="/" className="link">Home</Link>
                     </li>
-                    <li style={{ paddingLeft: "10px", listStyle: "none" }}>
-                        <Link to="/blogs">Blogs</Link>
+                    <li>
+                        <Link to="/blogs" className="link">Blogs</Link>
                     </li>
-                    <li style={{ paddingLeft: "10px", listStyle: "none" }}>
-                        <Link to="/contact" style={{ "color": "red" }}>Contact</Link>
+                    <li>
+                        <Link to="/contact" className="link">Contact</Link>
                     </li>
                 </ul>
             </nav>

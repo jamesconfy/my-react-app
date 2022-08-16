@@ -4,4 +4,18 @@ body {
     padding: 40px;
     font-family: Sans-Serif;
     text-align: center;
-  }
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    padding-left: 10px;
+    list-style: none;
+}
+
+.link {
+    color: red;
+    text-decoration: none;
+}

@@ -4,7 +4,7 @@ const NoPage = () => {
     return (
         <>
             <h1>404</h1>
-            <Link to="/">Home</Link>
+            <Link to="/" className="link">Home</Link>
         </>
     );
 };
