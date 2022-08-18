@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -6,7 +6,7 @@ function Counter() {
   return (
     <>
       <h4>{count}</h4>
-      <button>Increment</button>
+      <button onClick={(count) => setCount(count) + 1}>Increment</button>
     </>
   );
 }
