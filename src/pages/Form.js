@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MyForm() {
+export default function MyForm() {
     const [inputs, setInputs] = useState("");
     const [textarea, setTextarea] = useState(
         "The content of a textarea goes in the value attribute"
@@ -35,6 +35,7 @@ function MyForm() {
                         name="username"
                         value={inputs.username || ""}
                         onChange={handleChange}
+                        required
                     />
                 </label>
                 <br />
@@ -44,6 +45,7 @@ function MyForm() {
                         name="age"
                         value={inputs.age || ""}
                         onChange={handleChange}
+                        required
                     />
 
                 </label>
@@ -60,5 +62,3 @@ function MyForm() {
         </>
     );
 }
-
-export default MyForm;

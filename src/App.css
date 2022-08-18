@@ -1,0 +1,12 @@
+body {
+    background-color: #ff531a;
+}
+
+div#root {
+    background-color: #1aff1a;
+    display: table;
+}
+
+form {
+    color: rgb(255, 0, 0);
+}
