@@ -6,12 +6,7 @@ function Counter() {
   return (
     <>
       <span className={getBadgeClass()}>{count}</span>
-      <button
-        className="btn btn-danger"
-        onClick={() => setCount((count) => count - 1)}
-      >
-        Decrement
-      </button>
+      {renderButton(count)}
       <button
         className="btn btn-primary"
         onClick={() => setCount((count) => count + 1)}
@@ -25,6 +20,29 @@ function Counter() {
     let classes = "badge text-light m-2 p-2 bg-";
     classes += count <= 0 ? "warning" : "success";
     return classes;
+  }
+
+  function renderButton(count) {
+    if (count === 0) {
+      return (
+        <button
+          className="btn btn-danger"
+          onClick={() => setCount((count) => count - 1)}
+          disabled
+        >
+          Decrement
+        </button>
+      );
+    }
+
+    return (
+      <button
+        className="btn btn-danger"
+        onClick={() => setCount((count) => count - 1)}
+      >
+        Decrement
+      </button>
+    );
   }
 }
 
