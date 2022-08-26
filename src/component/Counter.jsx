@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 function Counter(props) {
-  const [count, setCount] = useState(props.counter.value);
+  const [value, setValue] = useState(props.counter.value);
 
   const renderButton = () => {
-    if (count === 0) {
+    if (value === 0) {
       return (
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={() => setCount((count) => count - 1)}
+          onClick={() => setValue((value) => value - 1)}
           disabled
         >
           Decrement
@@ -18,7 +18,7 @@ function Counter(props) {
       return (
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={() => setCount((count) => count - 1)}
+          onClick={() => setValue((value) => value - 1)}
         >
           Decrement
         </button>
@@ -28,17 +28,17 @@ function Counter(props) {
 
   const getBadgeClass = () => {
     let classes = "badge badge-sm text-light m-2 p-2 bg-";
-    classes += count <= 0 ? "warning" : "success";
+    classes += value <= 0 ? "warning" : "success";
     return classes;
   };
 
   return (
     <div>
-      <span className={getBadgeClass()}>{count}</span>
+      <span className={getBadgeClass()}>{value}</span>
       {renderButton()}
       <button
         className="btn btn-primary btn-sm m-2"
-        onClick={() => setCount((count) => count + 1)}
+        onClick={() => setValue((value) => value + 1)}
       >
         Increment
       </button>
