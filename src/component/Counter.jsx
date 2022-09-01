@@ -1,16 +1,14 @@
 // import React from "react";
 
 function Counter(props) {
-  //  const [value, setValue] = useState(props.counter.value);
+  //  const [value, setValue] = useState(counter.value);
+
+  const { onDelete, counter, onDecrement, onIncrement } = props;
 
   const renderButton = () => {
-    if (props.counter.value === 0) {
+    if (counter.value === 0) {
       return (
-        <button
-          className="btn btn-danger btn-sm m-2"
-          onClick={() => props.onDecrement(props.counter)}
-          disabled
-        >
+        <button className="btn btn-danger btn-sm m-2" disabled>
           Decrement
         </button>
       );
@@ -18,7 +16,7 @@ function Counter(props) {
       return (
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={() => props.onDecrement(props.counter)}
+          onClick={() => onDecrement(counter)}
         >
           Decrement
         </button>
@@ -28,23 +26,23 @@ function Counter(props) {
 
   const getBadgeClass = () => {
     let classes = "badge badge-sm text-light m-2 p-2 bg-";
-    classes += props.counter.value <= 0 ? "warning" : "success";
+    classes += counter.value <= 0 ? "warning" : "success";
     return classes;
   };
 
   return (
     <div>
-      <span className={getBadgeClass()}>{props.counter.value}</span>
+      <span className={getBadgeClass()}>{counter.value}</span>
       {renderButton()}
       <button
         className="btn btn-primary btn-sm m-2"
-        onClick={() => props.onIncrement(props.counter)}
+        onClick={() => onIncrement(counter)}
       >
         Increment
       </button>
       <button
         className="btn btn-danger btn-sm m-2"
-        onClick={() => props.onDelete(props.counter.id)}
+        onClick={() => onDelete(counter.id)}
       >
         Delete
       </button>

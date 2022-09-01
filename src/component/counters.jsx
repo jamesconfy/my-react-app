@@ -1,50 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./counter";
-// import { useState } from "react";
 
-function Counters() {
-  const [counters, setCounters] = useState([
-    { id: 1, value: 7 },
-    { id: 2, value: 19 },
-    { id: 3, value: 200 },
-    { id: 4, value: 17 },
-  ]);
-
-  const onDelete = (counterId) => {
-    const counter = counters.filter((c) => c.id !== counterId);
-    setCounters(counter);
-  };
-
-  const onDecrement = (counter) => {
-    const newCounters = [...counters];
-    const index = counters.indexOf(counter);
-    newCounters[index] = { ...counter };
-    newCounters[index].value--;
-    setCounters(newCounters);
-  };
-
-  const onIncrement = (counter) => {
-    const newCounters = [...counters];
-    const index = counters.indexOf(counter);
-    newCounters[index] = { ...counter };
-    newCounters[index].value++;
-    setCounters(newCounters);
-  };
-
-  const Reset = () => {
-    const counter = counters.map((c) => {
-      c.value = 0;
-      return c;
-    });
-    setCounters(counter);
-  };
-
+function Counters(props) {
+  const { counters, setCounters, onDelete, onDecrement, onIncrement, onReset } =
+    props;
+  
   const addBtn = () => {
     if (counters.length === 0) {
       return (
         <button
           onClick={() =>
-            setCounters((counters) => [...counters, { id: 1, value: 0 }])
+            setCounters((_counters) => [{ id: 1, value: 0 }])
           }
           className="btn btn-info ml-2"
         >
@@ -77,7 +43,7 @@ function Counters() {
         >
           Clear
         </button>
-        <button onClick={() => Reset()} className="btn btn-danger ml-2">
+        <button onClick={() => onReset()} className="btn btn-danger ml-2">
           Reset
         </button>
         {addBtn()}
